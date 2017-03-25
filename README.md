@@ -47,6 +47,8 @@ Multiple scripts can asynchronously be loaded by passing an Array of `addScript`
   });
 ```
 
+### CDN Fallbacks
+
 Loading common libraries and frameworks from CDNs can be great for leveraging the browser cache, but to keep your experience functional in the event the CDN is reachable, it is recommended to load a local fallback.
 
 For example:
