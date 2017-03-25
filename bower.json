@@ -24,6 +24,11 @@
     "bower_components",
     "test",
     "poly",
-    "tests"
+    "tests",
+    "karma.config.js",
+    "package.json",
+    "paths.json",
+    "webpack.config.js",
+    "yarn.lock"
   ]
 }
