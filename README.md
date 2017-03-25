@@ -75,7 +75,7 @@ const promises = [
 
 
 Promise.all(promises).then(() => {
-  // React is ready, maybe load your component with addScript() now?
+  // React, React DOM, Redux, and React Redux are ready. woohoo! maybe load your component with addScript() now?
 });
 ```
 
