@@ -8,7 +8,9 @@ Promise based method for adding a script to the page if it has not already been 
 yarn add lazyload-script
 ```
 
+```bash
 bower install lazyload-script
+```
 
 ## Usage
 
@@ -18,9 +20,20 @@ bower install lazyload-script
 > The UMD pattern typically attempts to offer compatibility with the most popular script loaders of the day (e.g RequireJS amongst others). In many cases it uses AMD as a base, with special-casing added to handle CommonJS compatibility.  
 &emsp;&mdash;&emsp;[umd](https://github.com/umdjs/umd)
 
+With `require()`  
 ```js
 var lazyLoadScript = require(`lazyLoadScript`);
+lazyLoadScript('main.js', 'main').then(() => {
+  /// main.js loaded
+});
 
+```
+
+With VanillaJS
+```js
+lazyLoadScript('main.js', 'main').then(() => {
+  /// main.js loaded
+});
 ```
 
 Multiple scripts can asynchronously be loaded by passing an Array of `addScript` promises to `Promise.all()`.

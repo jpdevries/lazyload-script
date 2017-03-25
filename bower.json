@@ -27,7 +27,7 @@
     "tests",
     "karma.config.js",
     "package.json",
-    "paths.json",
+    "paths.js",
     "webpack.config.js",
     "yarn.lock"
   ]
