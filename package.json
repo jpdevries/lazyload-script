@@ -19,7 +19,7 @@
     "promise",
     "component"
   ],
-  "author": "JP de Vries",
+  "author": { "name" : "JP de Vries", "email" : "mail@devries.jp", "url" : "https://github.com/jpdevries" },
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.24.0",
