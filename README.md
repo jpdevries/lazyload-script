@@ -36,14 +36,14 @@ lazyLoadScript('main.js', 'main').then(() => {
 });
 ```
 
-Multiple scripts can asynchronously be loaded by passing an Array of `addScript` promises to `Promise.all()`.
+Multiple scripts can asynchronously be loaded by passing an Array of `lazyLoadScript` promises to `Promise.all()`.
 
 ```js
   Promise.all([
-    addScript("https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js", "react.15.4.2.min.js"),
-    addScript("https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js", "react-dom.15.4.2.min.js")
+    lazyLoadScript("https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js", "react.15.4.2.min.js"),
+    lazyLoadScript("https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js", "react-dom.15.4.2.min.js")
   ]).then(() => {
-    // React is ready, maybe load your component with addScript() now?
+    // React is ready, maybe load your component with lazyLoadScript() now?
   });
 ```
 
@@ -56,26 +56,26 @@ For example:
 ```js
 const promises = [
   // try to load React from a CDN, fallback to a local copy
-  addScript("https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js", "react.15.4.2.min.js").catch((err => (
-    addScript(`./js/vendor/react.15.4.2.min.js`, "react.15.4.2.min.js")
+  lazyLoadScript("https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js", "react.15.4.2.min.js").catch((err => (
+    lazyLoadScript(`./js/vendor/react.15.4.2.min.js`, "react.15.4.2.min.js")
   ))),
   // try to load React DOM from a CDN, fallback to a local copy
-  addScript("https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js", "react-dom.15.4.2.min.js").catch((err => {
-    addScript(`./js/vendor/react-dom.15.4.2.min.js`, "react-dom.15.4.2.min.js")
+  lazyLoadScript("https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js", "react-dom.15.4.2.min.js").catch((err => {
+    lazyLoadScript(`./js/vendor/react-dom.15.4.2.min.js`, "react-dom.15.4.2.min.js")
   })),
   // try to load Redux from a CDN, fallback to a local copy
-  addScript("https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.min.js", "redux.3.6.0.min.js").catch((err => {
-    addScript(`./js/vendor/redux.3.6.0.min.js`, "redux.3.6.0.min.js")
+  lazyLoadScript("https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.min.js", "redux.3.6.0.min.js").catch((err => {
+    lazyLoadScript(`./js/vendor/redux.3.6.0.min.js`, "redux.3.6.0.min.js")
   })),
   // try to load React Redux from a CDN, fallback to a local copy
-  addScript("https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.3/react-redux.min.js", "react-redux.5.0.3.min.js").catch((err => {
-    addScript(`./js/vendor/react-redux.5.0.3.min.js`, "react-redux.5.0.3.min.js")
+  lazyLoadScript("https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.3/react-redux.min.js", "react-redux.5.0.3.min.js").catch((err => {
+    lazyLoadScript(`./js/vendor/react-redux.5.0.3.min.js`, "react-redux.5.0.3.min.js")
   }))
 ];
 
 
 Promise.all(promises).then(() => {
-  // React, React DOM, Redux, and React Redux are ready. woohoo! maybe load your component with addScript() now?
+  // React, React DOM, Redux, and React Redux are ready. woohoo! maybe load your component with lazyLoadScript() now?
 });
 ```
 
