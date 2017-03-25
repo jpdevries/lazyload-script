@@ -18,7 +18,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       {pattern: './poly/promise.js', included: true, served: true, watched: false},
-      {pattern: `./dist/lazyload-script.${0.0.0}.js`, included: true, served: true, watched: true, nocache: true},
+      {pattern: `./dist/lazyload-script.${VERSION}.js`, included: true, served: true, watched: true, nocache: true},
       './tests/*.js'
     ],
 
