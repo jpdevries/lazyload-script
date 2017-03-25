@@ -1,0 +1,29 @@
+{
+  "name": "lazyload-script",
+  "main": ["dist/lazyload-script.0.0.0.js","dist/lazyload-script.0.0.0.min.js"],
+  "version": "0.0.0",
+  "homepage": "https://github.com/jpdevries/lazyload-script",
+  "authors": [
+    "JP DeVries <mail@devries.jp>"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "node"
+  ],
+  "keywords": [
+    "lazy",
+    "load",
+    "lazyload",
+    "script"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "poly",
+    "tests"
+  ]
+}
