@@ -13,6 +13,12 @@ module.exports = function lazyLoadScript(src, id = undefined) {
         resolve(document.getElementById(id));
         return;
       }
+    } else {
+      const sc = document.querySelector(`script[src="${src}"]`);
+      if(sc) {
+        resolve(sc);
+        return;
+      }
     }
     script.onload = function(event) {
       resolve(script);

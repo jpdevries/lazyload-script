@@ -14,6 +14,17 @@ bower install lazyload-script
 
 ## Usage
 
+`lazyLoadScript` accepts two parameters. The path to the script to load and an id.
+
+```js
+lazyLoadScript('js/main.js', 'main').then(() => {
+  // main.js is loaded now with an id of main
+})
+```
+_The id parameter is optional. It is used to ensure that subsequent requests to load a script with that same id immediately resolve. If you omit the id parameter, the DOM will first be queried for a `<script>` with the same `src` attribute, making a new request by appending a new `<script>` tag._
+
+_`lazyLoadScript` uses this id to ensure scripts with the same id are only loaded once. This allows web components to request dependencies with `lazyLoadScript` and be rest assured the script will always be ready but only be requested as needed._
+
 
 `lazyLoadScript` is packaged as a UMD module so it can be included in several ways.
 
@@ -22,7 +33,7 @@ bower install lazyload-script
 
 With `require()`  
 ```js
-var lazyLoadScript = require(`lazyLoadScript`);
+const lazyLoadScript = require(`lazyLoadScript`);
 lazyLoadScript('main.js', 'main').then(() => {
   /// main.js loaded
 });

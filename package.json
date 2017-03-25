@@ -1,6 +1,6 @@
 {
   "name": "lazyload-script",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Promise based method for adding a script to the page if it has not already been added",
   "main": "lazyload-script.js",
   "scripts": {
