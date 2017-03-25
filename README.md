@@ -1,8 +1,8 @@
-# lazyload-script
+# lazyload-script 😴
 
 Promise based method for adding a script to the page if it has not already been added.
 
-## Install
+##  Install
 
 ```bash
 yarn add lazyload-script
