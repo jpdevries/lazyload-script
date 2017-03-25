@@ -69,7 +69,7 @@ const promises = [
   })),
   // try to load React Redux from a CDN, fallback to a local copy
   addScript("https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.3/react-redux.min.js", "react-redux.5.0.3.min.js").catch((err => {
-    addScript(`${MODx.config.assets_url}components/eureka/js/vendor/react-redux.5.0.3.min.js`, "react-redux.5.0.3.min.js")
+    addScript(`./js/vendor/react-redux.5.0.3.min.js`, "react-redux.5.0.3.min.js")
   }))
 ];
 
