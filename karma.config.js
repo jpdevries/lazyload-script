@@ -1,6 +1,8 @@
 // Karma configuration
 // Generated on Sun Mar 20 2016 00:10:36 GMT+0100 (CET)
 
+VERSION = (require("./package.json").version);
+
 module.exports = function(config) {
   config.set({
 
@@ -16,7 +18,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       {pattern: './poly/promise.js', included: true, served: true, watched: false},
-      {pattern: './dist/lazyload-script.0.0.0.js', included: true, served: true, watched: true, nocache: true},
+      {pattern: `./dist/lazyload-script.${0.0.0}.js`, included: true, served: true, watched: true, nocache: true},
       './tests/*.js'
     ],
 
