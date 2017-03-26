@@ -1,4 +1,4 @@
-# lazyload-script 😴
+# lazyload-script 😴 &middot; [![Build Status](https://travis-ci.org/jpdevries/lazyload-script.svg?branch=master)](https://travis-ci.org/jpdevries/lazyload-script) [![npm version](https://badge.fury.io/js/lazyload-script.svg)](https://badge.fury.io/js/lazyload-script)
 
 Promise based method for adding a script to the page if it has not already been added.
 
