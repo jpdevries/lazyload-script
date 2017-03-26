@@ -17,7 +17,7 @@ bower install lazyload-script
 When used with `require()` you'll notice very little weight is added to your bundle. 
 
 ```js
-var lazyLoadScript = require('lazyLoadScript');
+const lazyLoadScript = require('lazyLoadScript');
 ```
 
 #### VanillaJS Weight
