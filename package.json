@@ -1,11 +1,12 @@
 {
   "name": "lazyload-script",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Promise based method for adding a script to the page if it has not already been added",
   "main": "lazyload-script.js",
   "scripts": {
     "test": "./node_modules/.bin/karma start karma.config.js --single-run --browsers PhantomJS",
-    "testserve": "karma start karma.config.js --verbose",
+    "testserve": "karma start karma.config.js",
+    "testphantom": "karma start karma.config.js --browsers PhantomJS",
     "webpack": "rm -rf dist && webpack",
     "gzipped": "gzipped dist/lazyload-script.*.js && gzipped dist/lazyload-script.*.min.js"
   },
@@ -39,6 +40,8 @@
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.4",
+    "phantomjs-polyfill-object-assign": "^0.0.2",
+    "promise-polyfill": "^6.0.2",
     "unminified-webpack-plugin": "^1.2.0",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"

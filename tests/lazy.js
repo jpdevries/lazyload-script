@@ -2,7 +2,10 @@ var src = 'https://code.jquery.com/qunit/qunit-2.2.1.js',
 id = 'qunit-2.2.1.js';
 
 describe("lazyLoadScript", function () {
-  beforeEach(function () {});
+  beforeEach(function () {
+    //const scripts =  document.querySelectorAll('script[id="' + id + '"], script[src="' + src + '"]');
+    //for(var i = 0; i < scripts.length; i++) scripts[i].remove();
+  });
 
   it("returns a promise", function () {
     expect(lazyLoadScript(src, id)).toEqual(jasmine.any(Promise));
@@ -10,7 +13,7 @@ describe("lazyLoadScript", function () {
 
   it("should append a script to the DOM", function (done) {
     lazyLoadScript(src, id).then(function (script) {
-      expect(!!document.getElementById('' + id)).toBe(true);
+      expect(!!document.getElementById(id)).toBe(true);
       done();
     }).catch(function (err) {
       fail(err);
@@ -26,4 +29,18 @@ describe("lazyLoadScript", function () {
       });
     });
   });
+
+  // not sure why this doesn't work for testing other attributes like text. phantom?
+  it("should support adding an id attribute as an Object parameter", function(done) {
+    lazyLoadScript(src, {
+      id: id
+    }).then(function (script) {
+      expect(script.hasAttribute('id')).toBe(true);
+      done();
+    }).catch(function (err) {
+      fail(err);
+      done();
+    });
+  });
+
 });

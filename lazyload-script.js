@@ -1,11 +1,18 @@
-module.exports = function lazyLoadScript(src, id = undefined) {
+module.exports = function lazyLoadScript(src, opts = {}) {
   return new Promise(function(resolve, reject) {
     if(!src) {
       throw new Error('src parameter must be specified');
       return;
     }
 
-    var script = document.createElement('script');
+    const defaults = {
+      force: false
+    },
+    {id, async, integrity, type, text, defer, charset, crossorigin, force} = Object.assign({}, defaults, (typeof opts === 'string') ? {
+      id: opts
+    } : opts),
+    script = document.createElement('script');
+
     script.src = src;
     if(id) {
       script.setAttribute('id',id);
@@ -15,11 +22,20 @@ module.exports = function lazyLoadScript(src, id = undefined) {
       }
     } else {
       const sc = document.querySelector(`script[src="${src}"]`);
-      if(sc) {
+      if(!force && sc) {
         resolve(sc);
         return;
       }
     }
+
+    if(async) script.setAttribute('async', 'true');
+    if(defer) script.setAttribute('defer', 'true');
+    if(integrity) script.setAttribute('integrity', integrity);
+    if(type) script.setAttribute('type', type);
+    if(text) script.setAttribute('text', text);
+    if(charset) script.setAttribute('charset', charset);
+    if(crossorigin) script.setAttribute('crossorigin', crossorigin);
+
     script.onload = function(event) {
       resolve(script);
     }

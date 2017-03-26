@@ -23,15 +23,15 @@ const lazyLoadScript = require('lazyLoadScript');
 #### VanillaJS Weight
 | Script        | Disk Size           | GZIP  |
 | ------------- | ------------- | ----- |
-| `lazyload-script.0.0.3.js`      | `3.90kB`      |   `1.24kB` |
-| `lazyload-script.0.0.3.min.js`      | `1.26kB`      |   `615b` |
+| `lazyload-script.0.0.4.js`      | `4.82kB`      |   `1.48kB` |
+| `lazyload-script.0.0.4.min.js`      | `1.64kB`      |   `773b` |
 
-The UMD module wrapper weights more than the `lazyLoadScript()` method itself.  
+The UMD module wrapper weighs more than the `lazyLoadScript()` method itself.  
 If you want to go rogue, you can [load directly from source](https://github.com/jpdevries/lazyload-script/blob/master/lazyload-script.js).
 
 ## Usage
 
-`lazyLoadScript` accepts two parameters. The path to the script to load and an id.
+`lazyLoadScript` accepts two parameters. The path to the script to load and either an id or configuration object.
 
 ```js
 lazyLoadScript('js/main.js', 'main').then(() => {
@@ -75,7 +75,22 @@ Multiple scripts can asynchronously be loaded by passing an Array of `lazyLoadSc
   });
 ```
 
-### CDN Fallbacks
+## Configuration
+
+`lazyLoadScript` accepts two parameters. The path to the script to load and either an id or configuration object.
+
+| Option        | Default           | Description  |
+| ------------- | ------------- | ----- |
+| `async`      | `undefined`      |   If true adds an `async` attribute |
+| `defer`      | `undefined`      |   If true adds a `defer` attribute |
+| `integrity`      | `undefined`      |   If set adds an `integrity` attribute |
+| `type`      | `undefined`      |   If set adds a `type` attribute |
+| `text`      | `undefined`      |   If set adds an `text` attribute |
+| `charset`      | `undefined`      |   If set adds an `charset` attribute |
+| `crossorigin`      | `undefined`      |   If set adds an `crossorigin` attribute |
+| `force`      | `false`      |   If true forces an asset to be loaded even if another with the same `id` or `href` are found |
+
+## CDN Fallbacks
 
 Loading common libraries and frameworks from CDNs can be great for leveraging the browser cache, but to keep your experience functional in the event the CDN is reachable, it is recommended to load a local fallback.
 

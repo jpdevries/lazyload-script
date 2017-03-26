@@ -84,7 +84,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 module.exports = function lazyLoadScript(src) {
-  var id = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : undefined;
+  var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
   return new Promise(function (resolve, reject) {
     if (!src) {
@@ -92,7 +92,24 @@ module.exports = function lazyLoadScript(src) {
       return;
     }
 
-    var script = document.createElement('script');
+    var defaults = {
+      force: false
+    },
+        _Object$assign = Object.assign({}, defaults, typeof opts === 'string' ? {
+      id: opts
+    } : opts),
+        id = _Object$assign.id,
+        async = _Object$assign.async,
+        integrity = _Object$assign.integrity,
+        type = _Object$assign.type,
+        text = _Object$assign.text,
+        defer = _Object$assign.defer,
+        charset = _Object$assign.charset,
+        crossorigin = _Object$assign.crossorigin,
+        force = _Object$assign.force,
+        script = document.createElement('script');
+
+
     script.src = src;
     if (id) {
       script.setAttribute('id', id);
@@ -102,11 +119,20 @@ module.exports = function lazyLoadScript(src) {
       }
     } else {
       var sc = document.querySelector('script[src="' + src + '"]');
-      if (sc) {
+      if (!force && sc) {
         resolve(sc);
         return;
       }
     }
+
+    if (async) script.setAttribute('async', 'true');
+    if (defer) script.setAttribute('defer', 'true');
+    if (integrity) script.setAttribute('integrity', integrity);
+    if (type) script.setAttribute('type', type);
+    if (text) script.setAttribute('text', text);
+    if (charset) script.setAttribute('charset', charset);
+    if (crossorigin) script.setAttribute('crossorigin', crossorigin);
+
     script.onload = function (event) {
       resolve(script);
     };

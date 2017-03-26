@@ -17,7 +17,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: './poly/promise.js', included: true, served: true, watched: false},
+      './node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js',
+      './node_modules/promise-polyfill/promise.js',
       {pattern: `./dist/lazyload-script.${VERSION}.js`, included: true, served: true, watched: true, nocache: true},
       './tests/*.js'
     ],
