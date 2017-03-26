@@ -12,6 +12,23 @@ yarn add lazyload-script
 bower install lazyload-script
 ```
 
+## Weight In
+#### Imported Weight 
+When used with `require()` you'll notice very little weight is added to your bundle. 
+
+```js
+var lazyLoadScript = require('lazyLoadScript');
+```
+
+#### VanillaJS Weight
+| Script        | Disk Size           | GZIP  |
+| ------------- | ------------- | ----- |
+| `lazyload-script.0.0.3.js`      | `3.90kB`      |   `1.24kB` |
+| `lazyload-script.0.0.3.min.js`      | `1.26kB`      |   `615b` |
+
+The UMD module wrapper weights more than the `lazyLoadScript()` method itself.  
+If you want to go rogue, you can [load directly from source](https://github.com/jpdevries/lazyload-script/blob/master/lazyload-script.js).
+
 ## Usage
 
 `lazyLoadScript` accepts two parameters. The path to the script to load and an id.
