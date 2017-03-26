@@ -21,7 +21,7 @@ lazyLoadScript('js/main.js', 'main').then(() => {
   // main.js is loaded now with an id of main
 })
 ```
-_The id parameter is optional. It is used to ensure that subsequent requests to load a script with that same id immediately resolve. If you omit the id parameter, the DOM will first be queried for a `<script>` with the same `src` attribute, making a new request by appending a new `<script>` tag._
+_The id parameter is optional. It is used to ensure that subsequent requests to load a script with that same id immediately resolve. If you omit the id parameter, the DOM will first be queried for a `<script>` with the same `src` attribute, before making a new request by appending a new `<script>` tag._
 
 _`lazyLoadScript` uses this id to ensure scripts with the same id are only loaded once. This allows web components to request dependencies with `lazyLoadScript` and rest assured the script will always be ready but only be requested as needed._
 
