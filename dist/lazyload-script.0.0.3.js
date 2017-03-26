@@ -100,6 +100,12 @@ module.exports = function lazyLoadScript(src) {
         resolve(document.getElementById(id));
         return;
       }
+    } else {
+      var sc = document.querySelector('script[src="' + src + '"]');
+      if (sc) {
+        resolve(sc);
+        return;
+      }
     }
     script.onload = function (event) {
       resolve(script);
