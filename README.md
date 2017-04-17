@@ -23,8 +23,8 @@ const lazyLoadScript = require('lazyLoadScript');
 #### VanillaJS Weight
 | Script        | Disk Size           | GZIP  |
 | ------------- | ------------- | ----- |
-| `lazyload-script.0.0.4.js`      | `4.82kB`      |   `1.48kB` |
-| `lazyload-script.0.0.4.min.js`      | `1.64kB`      |   `773b` |
+| `lazyload-script.1.0.0.js`      | `4.82kB`      |   `1.48kB` |
+| `lazyload-script.1.0.0.min.js`      | `1.64kB`      |   `773b` |
 
 The UMD module wrapper weighs more than the `lazyLoadScript()` method itself.  
 If you want to go rogue, you can [load directly from source](https://github.com/jpdevries/lazyload-script/blob/master/lazyload-script.js).
