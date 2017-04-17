@@ -9,7 +9,7 @@ yarn add lazyload-script
 ```
 
 ```bash
-bower install lazyload-script
+bower install lazyload-script --save
 ```
 
 ## Weight In
