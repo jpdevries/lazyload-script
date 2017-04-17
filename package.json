@@ -1,8 +1,8 @@
 {
   "name": "lazyload-script",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "Promise based method for adding a script to the page if it has not already been added",
-  "main": "dist/lazyload-script.0.0.5.js",
+  "main": "dist/lazyload-script.1.0.0.js",
   "scripts": {
     "test": "./node_modules/.bin/karma start karma.config.js --single-run --browsers PhantomJS",
     "testserve": "karma start karma.config.js",
