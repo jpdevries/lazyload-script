@@ -9,7 +9,7 @@
     "testphantom": "karma start karma.config.js --browsers PhantomJS",
     "webpack": "rm -rf dist && webpack",
     "gzipped": "gzipped dist/lazyload-script.*.js && gzipped dist/lazyload-script.*.min.js",
-    "postpack": "./node_modules/webpack/bin/webpack.js"
+    "postpack": "npm i && ./node_modules/webpack/bin/webpack.js"
   },
   "repository": {
     "type": "git",
