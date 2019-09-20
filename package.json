@@ -9,7 +9,7 @@
     "testphantom": "karma start karma.config.js --browsers PhantomJS",
     "webpack": "rm -rf dist && webpack",
     "gzipped": "gzipped dist/lazyload-script.*.js && gzipped dist/lazyload-script.*.min.js",
-    "postinstall": "echo 'postinstall yolo!!!!' && ls"
+    "install": "echo 'postinstall yolo!!!!' && ls"
   },
   "repository": {
     "type": "git",
