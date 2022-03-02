@@ -36,7 +36,7 @@
     "gzipped": "^0.0.5",
     "jasmine": "^2.5.3",
     "jasmine-core": "^2.5.2",
-    "karma": "^1.5.0",
+    "karma": "^6.3.16",
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.4",
